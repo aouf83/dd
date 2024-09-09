@@ -1,26 +1,44 @@
+/* Main app container */
 .App {
-    display: flex;
-  }
-  
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.3s ease-in-out; /* Smoother content transition */
+}
+
+/* Main content area */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  margin-left: 80px; /* Default margin with sidebar collapsed */
+  margin-top: 60px;
+  transition: margin-left 0.3s ease; /* Smooth transition for sidebar */
+}
+
+/* Sidebar open state */
+.sidebar-open .main-content {
+  margin-left: 240px; /* Margin with sidebar open */
+  transition: margin-left 0.3s ease; /* Smooth transition when expanding */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1088px) {
   .main-content {
-    flex-grow: 1;
-    padding: 20px;
-    margin-left: 80px;
-    margin-top: 60px;
-    transition: margin-left 0.3s ease;
+    margin-left: 80px; /* Keep margin small when sidebar is collapsed */
   }
-  
+
   .sidebar-open .main-content {
-    margin-left: 240px;
+    margin-left: 240px; /* Expand margin when sidebar is expanded */
   }
-  
+
+  /* For very small screens (mobile view) */
   @media (max-width: 1088px) {
     .main-content {
-      margin-left: 80px; /* Keep margin small when sidebar is collapsed */
+      margin-left: 0;
+      padding: 15px; /* Adjust padding for mobile */
     }
-  
+
     .sidebar-open .main-content {
-      margin-left: 240px; /* Expand margin when sidebar is expanded */
+      margin-left: 240px;
     }
   }
-  
+}

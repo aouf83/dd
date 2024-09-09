@@ -1,8 +1,8 @@
 import React, { useState, useEffect, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Loader from ".././components/common/Loader";
+import Loader from "../components/common/Loader";
 import Header from "../components/common/Header";
-import Sidebar from ".././components/common/Sidebar";
+import Sidebar from "../components/common/Sidebar";
 import "../App.css";
 
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
@@ -13,7 +13,6 @@ const AppRoutes = () => {
   const [isAbove1088px, setIsAbove1088px] = useState(window.innerWidth >= 1088);
 
   const toggleSidebar = () => {
-    // Toggle sidebar only if the screen is below 1088px
     if (window.innerWidth < 1088) {
       setIsSidebarOpen(!isSidebarOpen);
     }
@@ -21,7 +20,6 @@ const AppRoutes = () => {
 
   const handleResize = () => {
     setIsAbove1088px(window.innerWidth >= 1088);
-    // Collapse sidebar when resizing below 1088px
     if (window.innerWidth < 1088) {
       setIsSidebarOpen(false);
     }

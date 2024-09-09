@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   List,
   ListItem,
@@ -15,10 +15,11 @@ import AssignmentIcon from "@mui/icons-material/Assignment";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import "../../assets/styles/Sidebar.css";
 
-const Sidebar = ({ isOpen, isAbove1088px }) => {
+const Sidebar = ({ isOpen }) => {
   const [learningOpen, setLearningOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [activeItem, setActiveItem] = useState("Dashboard");
+  const [isAbove1088px, setIsAbove1088px] = useState(window.innerWidth > 1088);
 
   const handleLearningClick = () => {
     setLearningOpen(!learningOpen);
@@ -40,6 +41,22 @@ const Sidebar = ({ isOpen, isAbove1088px }) => {
     setActiveItem(item);
   };
 
+  // Detect window resize to toggle the sidebar visibility based on screen width
+  useEffect(() => {
+    const handleResize = () => {
+      setIsAbove1088px(window.innerWidth > 1088);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  // Only show the sidebar if screen is wider than 1088px or isOpen is true
+  if (!isOpen && !isAbove1088px) {
+    return null;
+  }
+
   return (
     <div
       className={`sidebar ${
@@ -50,7 +67,6 @@ const Sidebar = ({ isOpen, isAbove1088px }) => {
     >
       <List>
         <ListItem
-          button
           onClick={() => handleItemClick("Dashboard")}
           className={activeItem === "Dashboard" ? "active" : ""}
         >
@@ -64,7 +80,6 @@ const Sidebar = ({ isOpen, isAbove1088px }) => {
         </ListItem>
 
         <ListItem
-          button
           onClick={handleLearningClick}
           className={activeItem === "Learning" ? "active" : ""}
         >
@@ -82,7 +97,6 @@ const Sidebar = ({ isOpen, isAbove1088px }) => {
         <Collapse in={learningOpen} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             <ListItem
-              button
               onClick={() => handleItemClick("Syllabus")}
               className={activeItem === "Syllabus" ? "active nested" : "nested"}
             >
@@ -92,10 +106,9 @@ const Sidebar = ({ isOpen, isAbove1088px }) => {
               {(isOpen || isHovered) && <ListItemText primary="Syllabus" />}
             </ListItem>
             <ListItem
-              button
               onClick={() => handleItemClick("Practices")}
               className={
-                activeItem === "Practices  " ? "active  nested" : "nested"
+                activeItem === "Practices" ? "active nested" : "nested"
               }
             >
               <ListItemIcon>
@@ -107,7 +120,6 @@ const Sidebar = ({ isOpen, isAbove1088px }) => {
         </Collapse>
 
         <ListItem
-          button
           onClick={() => handleItemClick("Support")}
           className={activeItem === "Support" ? "active" : ""}
         >
