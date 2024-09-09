@@ -1,0 +1,26 @@
+.App {
+    display: flex;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 80px;
+    margin-top: 60px;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .sidebar-open .main-content {
+    margin-left: 240px;
+  }
+  
+  @media (max-width: 1088px) {
+    .main-content {
+      margin-left: 80px; /* Keep margin small when sidebar is collapsed */
+    }
+  
+    .sidebar-open .main-content {
+      margin-left: 240px; /* Expand margin when sidebar is expanded */
+    }
+  }
+  
