@@ -1,51 +1,111 @@
-/* Main container for the cards */
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* 3 cards on large screens */
-    gap: 20px;
+/* Main container for the app */
+.app-container {
+    font-family: 'Arial', sans-serif;
     padding: 20px;
+    max-width: 1200px;
+    /* Increased width to accommodate multiple cards */
+    margin: 0 auto;
 }
 
-/* Individual card styling */
-.card {
-    background-color: #f0f4fa;
+/* Container for the cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Space between cards */
+}
+
+/* Event card container */
+.event-card {
+    background-color: #e4eef6;
     border-radius: 12px;
-    padding: 20px;
+    padding: 10px;
+    /* Reduced padding to make the card smaller */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    width: calc(29.333% - 20px);
+    /* Adjusted width to show 3 cards per row */
+    cursor: pointer;
+    box-sizing: border-box;
+    /* Ensures padding and border are included in the width */
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    /* Hover effect */
+/* Image at the top */
+.event-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.card .date {
-    background-color: #fff;
+/* Registration successful badge */
+.registration-success {
+    background-color: #e7f9ee;
+    color: #34a853;
+    border-radius: 20px;
     padding: 5px 10px;
-    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+/* Event details section */
+.event-details {
+    margin-top: 10px;
+}
+
+.event-title {
+    margin: 10px 0;
+    font-size: 16px;
+    /* Reduced font size for smaller cards */
     font-weight: bold;
 }
 
-/* Responsive Design for Tablets (768px - 1024px) */
-@media (max-width: 1024px) {
-    .card-container {
-        grid-template-columns: repeat(2, 1fr);
-        /* 2 cards on tablet */
-    }
+.event-time,
+.event-speaker {
+    font-size: 12px;
+    /* Reduced font size for smaller cards */
+    color: #555;
 }
 
-/* Responsive Design for Mobile (less than 768px) */
-@media (max-width: 768px) {
-    .card-container {
-        grid-template-columns: 1fr;
-        /* 1 card on mobile */
-    }
+.event-date {
+    font-size: 14px;
+    /* Adjusted font size */
+    font-weight: bold;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    float: right;
+    margin-top: 10px;
+}
+
+/* Seats and registrations */
+.event-info {
+    margin-top: 10px;
+    font-size: 12px;
+    /* Reduced font size for smaller cards */
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Registration button */
+.event-status {
+    margin-top: 10px;
+}
+
+.registered-button {
+    background-color: #34a853;
+    color: white;
+    padding: 8px;
+    /* Reduced padding */
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+    /* Adjusted font size */
+}
+
+.registered-button:hover {
+    background-color: #2a7d3b;
 }
