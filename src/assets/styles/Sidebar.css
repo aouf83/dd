@@ -1,10 +1,12 @@
 /* Sidebar container */
 .sidebar {
   position: fixed;
-  top: 69px; /* Adjust based on header height */
+  top: 69px;
+  /* Adjust based on header height */
   left: 0;
   width: 80px;
-  height: calc(100% - 60px); /* Subtract height of header */
+  height: calc(100% - 60px);
+  /* Subtract height of header */
   background-color: #ffffff;
   transition: width 0.3s ease, background-color 0.3s ease;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
@@ -20,19 +22,27 @@
 
 /* Expanded sidebar state */
 .sidebar.open {
-  width: 240px;
+  animation: sidebarExpand 0.3s ease forwards;
+}
+
+@keyframes sidebarExpand {
+  from {
+    width: 80px;
+  }
+
+  to {
+    width: 240px;
+  }
 }
 
 /* Icon styling for list items */
 .sidebar .MuiListItemIcon-root {
   min-width: 50px;
-  color: #4caf50; /* Primary color for icons */
+  color: #4caf50;
+  /* Primary color for icons */
 }
 
-/* Nested list item padding */
-.sidebar .MuiCollapse-root .nested {
-  padding-left: 40px;
-}
+
 
 /* List item styling */
 .sidebar .MuiListItem-root {
@@ -45,13 +55,13 @@
 .sidebar .MuiListItem-root:hover {
   background-color: #e9f5ff;
   color: #007bff;
-  box-shadow: inset 3px 0 0 0 #4caf50; /* Highlight left border on hover */
+  box-shadow: inset 3px 0 0 0 #4caf50;
+  /* Highlight left border on hover */
 }
 
 /* Active list item */
 .sidebar .active {
   background-color: #f0f8ff;
-  border-left: 5px solid #4caf50;
 }
 
 /* List item text styling */
@@ -106,7 +116,8 @@
 }
 
 .social-icons a:hover img {
-  transform: scale(1.1); /* Slight zoom on hover */
+  transform: scale(1.1);
+  /* Slight zoom on hover */
 }
 
 /* Responsive behavior: Sidebar collapses on smaller screens */
@@ -135,7 +146,8 @@
   }
 
   .sidebar .MuiListItem-root {
-    padding: 10px 14px; /* Reduce padding for mobile */
+    padding: 10px 14px;
+    /* Reduce padding for mobile */
   }
 
   .sidebar-footer {
@@ -143,7 +155,8 @@
   }
 
   .social-icons a img {
-    width: 20px; /* Smaller icons for mobile */
+    width: 20px;
+    /* Smaller icons for mobile */
     height: 20px;
   }
 }
