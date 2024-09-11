@@ -1,149 +1,88 @@
 /* Sidebar container */
 .sidebar {
   position: fixed;
-  top: 69px; /* Adjust based on header height */
+  top: 60px; /* Adjust based on header height */
   left: 0;
   width: 80px;
-  height: calc(100% - 60px); /* Subtract height of header */
-  background-color: #ffffff;
-  transition: width 0.3s ease, background-color 0.3s ease;
+  height: 100%;
+  background-color: #f8f9fa;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
   z-index: 1000;
+  transition: width 0.3s ease-in-out, transform 0.3s ease;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-top-right-radius: 16px;
-  border-bottom-right-radius: 16px;
-  padding: 10px 0;
+  flex-direction: column; /* Flexbox for footer alignment */
+  overflow-y: auto; /* Allow scrolling when content overflows */
+}
+/* Sidebar open state */
+.sidebar-open .sidebar {
+  width: 240px; /* Expanded sidebar width */
 }
 
-/* Expanded sidebar state */
-.sidebar.open {
-  width: 240px;
-}
-
-/* Icon styling for list items */
-.sidebar .MuiListItemIcon-root {
-  min-width: 50px;
-  color: #4caf50; /* Primary color for icons */
-}
-
-/* Nested list item padding */
-.sidebar .MuiCollapse-root .nested {
-  padding-left: 40px;
-}
-
-/* List item styling */
+/* Sidebar item styles */
 .sidebar .MuiListItem-root {
-  padding: 12px 16px;
-  transition: background-color 0.3s ease;
-  border-radius: 8px;
+  padding: 12px 16px; /* Added more padding for better spacing */
+  transition: padding 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
-/* Hover effect for list items */
 .sidebar .MuiListItem-root:hover {
   background-color: #e9f5ff;
   color: #007bff;
-  box-shadow: inset 3px 0 0 0 #4caf50; /* Highlight left border on hover */
+  box-shadow: inset 3px 0 0 0 #4caf50;
+  border-radius: 4px;
 }
 
-/* Active list item */
-.sidebar .active {
-  background-color: #f0f8ff;
-  border-left: 5px solid #4caf50;
+/* Sidebar icons */
+.sidebar .MuiListItemIcon-root {
+  min-width: 40px; /* Decreased width for better alignment */
+  color: #4caf50;
 }
 
-/* List item text styling */
-.sidebar .MuiListItemText-root span {
-  font-weight: 500;
-  font-size: 1.1rem;
+/* Sidebar expand animation */
+.sidebar.open {
+  animation: sidebarExpand 0.3s ease forwards;
 }
 
-/* Footer styling */
+@keyframes sidebarExpand {
+  from {
+    width: 80px;
+  }
+  to {
+    width: 240px;
+  }
+}
+
+/* Footer in sidebar */
 .sidebar-footer {
-  padding: 20px 10px;
-  text-align: center;
-  border-top: 1px solid #f0f0f0;
-}
-
-/* Footer button */
-.sidebar-footer .MuiIconButton-root {
+  padding: 12px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 10px;
-  background-color: #4caf50;
-  color: white;
-  border-radius: 25px;
-  transition: background-color 0.3s ease;
+  justify-content: space-between;
+  border-top: 1px solid #ddd;
+  background-color: #f8f9fa;
+  margin-top: auto; /* Pushes footer to the bottom */
+  position: sticky;
+  bottom: 0;
 }
-
-.sidebar-footer .MuiIconButton-root:hover {
-  background-color: #45a249;
-}
-
-/* Footer button text */
-.sidebar-footer .MuiListItemText-root {
-  margin-left: 10px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-/* Social icons container */
+/* Social media icons */
 .social-icons {
   display: flex;
-  justify-content: space-evenly;
-  margin-top: 10px;
+  gap: 8px; /* Adds spacing between icons */
 }
 
-/* Social icon images */
-.social-icons a img {
-  width: 25px;
-  height: 25px;
+.social-icons img {
+  width: 24px; /* Make icons smaller for a clean look */
+  height: 24px;
   transition: transform 0.3s ease;
 }
 
-.social-icons a:hover img {
-  transform: scale(1.1); /* Slight zoom on hover */
+.social-icons img:hover {
+  transform: scale(1.2); /* Enlarge on hover */
+  cursor: pointer;
 }
 
-/* Responsive behavior: Sidebar collapses on smaller screens */
-@media (max-width: 1088px) {
-  .sidebar {
-    width: 80px;
-  }
-
-  .sidebar.open {
-    width: 240px;
-  }
-
-  .sidebar-footer {
-    padding: 15px;
-  }
-}
-
-/* Further shrink sidebar for mobile view */
-@media (max-width: 600px) {
-  .sidebar {
-    width: 60px;
-  }
-
-  .sidebar.open {
-    width: 200px;
-  }
-
-  .sidebar .MuiListItem-root {
-    padding: 10px 14px; /* Reduce padding for mobile */
-  }
-
-  .sidebar-footer {
-    padding: 10px;
-  }
-
-  .social-icons a img {
-    width: 20px; /* Smaller icons for mobile */
-    height: 20px;
-  }
+/* Smooth transition for sidebar toggle */
+.sidebar {
+  transition: all 0.3s ease-in-out;
 }

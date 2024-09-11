@@ -1,0 +1,65 @@
+/* ////////////////////////////////////////////////////////////////////// practices main page  section  */
+
+.practices-main {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1015px) {
+  .practices-main {
+    flex-direction: column;
+  }
+}
+
+/* ////////////////////////////////////////////////////////////////////// practices left section  */
+
+.practices-left-main {
+  background: rgb(255, 255, 255);
+  width: 100%;
+}
+.practices-left-videos-container {
+  background-color: yellow;
+}
+.practices-left-upcoming-container {
+}
+/* ////////////////////////////////////////////////////////////////////// practices right section  */
+
+.practices-right-main {
+  width: 78%;
+  padding-left: 20px;
+  border-left: 1px solid rgb(232, 232, 232);
+}
+
+@media (max-width: 1015px) {
+  .practices-right-main {
+    width: 100%;
+  }
+}
+
+.practices-right-image-container {
+  text-align: center;
+  background-color: rgb(245, 251, 255);
+  padding: 30px 1px;
+  border-radius: 20px;
+  width: 100%;
+  margin-top: 30px;
+}
+.attended-practices {
+  margin-bottom: 50px;
+}
+.attended-practices h1 {
+  color: rgb(77, 77, 77);
+  font-size: 30px;
+  font-family: gordita_regular;
+}
+.practices-right-Empty h3 {
+  font-size: 30px;
+  font-family: gordita_medium;
+  margin-bottom: 10px;
+}
+.practices-right-Empty p {
+  font-size: 23px;
+  line-height: 20px;
+  margin-bottom: 15px;
+  color: rgb(116, 116, 116);
+}

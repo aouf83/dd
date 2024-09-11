@@ -41,7 +41,6 @@ const Sidebar = ({ isOpen }) => {
     setActiveItem(item);
   };
 
-  // Detect window resize to toggle the sidebar visibility based on screen width
   useEffect(() => {
     const handleResize = () => {
       setIsAbove1088px(window.innerWidth > 1088);
@@ -52,7 +51,6 @@ const Sidebar = ({ isOpen }) => {
     };
   }, []);
 
-  // Only show the sidebar if screen is wider than 1088px or isOpen is true
   if (!isOpen && !isAbove1088px) {
     return null;
   }
@@ -74,6 +72,7 @@ const Sidebar = ({ isOpen }) => {
             <img
               src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/images/menu/dashboard.svg"
               alt="Dashboard"
+              style={{ width: "24px" }} /* Adjust icon size */
             />
           </ListItemIcon>
           {(isOpen || isHovered) && <ListItemText primary="Dashboard" />}
@@ -87,6 +86,7 @@ const Sidebar = ({ isOpen }) => {
             <img
               src="https://steyp.com/static/media/learning.2b4f8717.svg"
               alt="Learning"
+              style={{ width: "24px" }} /* Adjust icon size */
             />
           </ListItemIcon>
           {(isOpen || isHovered) && <ListItemText primary="Learning" />}
