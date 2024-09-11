@@ -7,6 +7,13 @@ import "../App.css";
 
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
 const Dashboard = lazy(() => import("../pages/Dashboard"));
+const Course = lazy(() => import("../pages/course"));
+const Meets = lazy(() => import("../pages/meets"));
+const Practices = lazy(() => import("../pages/practices"));
+
+
+
+
 
 const AppRoutes = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -41,6 +48,10 @@ const AppRoutes = () => {
           <Suspense fallback={<Loader />}>
             <Routes>
               <Route path="/" element={<Dashboard />} />
+              <Route path="/course" element={<Course />} />
+              <Route path="/meets" element={<Meets />} />
+              <Route path="/practices" element={<Practices />} />
+
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
