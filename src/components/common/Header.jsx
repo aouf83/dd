@@ -79,7 +79,9 @@ const Header = ({ toggleSidebar, isAbove1088px }) => {
                   margin: "0 auto",
                 }} /* Larger profile avatar inside drawer */
               />
-              <h3 style={{ marginTop: "15px", fontSize: "18px" }}>Abdul Rahman Aouf</h3>
+              <h3 style={{ marginTop: "15px", fontSize: "18px" }}>
+                Abdul Rahman Aouf
+              </h3>
               <p style={{ color: "#666", fontSize: "14px" }}>
                 johndoe@example.com
               </p>

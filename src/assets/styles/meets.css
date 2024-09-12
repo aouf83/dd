@@ -1,111 +1,140 @@
 /* Main container for the app */
-.app-container {
+.unique-app-container {
     font-family: 'Arial', sans-serif;
     padding: 20px;
     max-width: 1200px;
-    /* Increased width to accommodate multiple cards */
     margin: 0 auto;
 }
 
 /* Container for the cards */
-.card-container {
+.unique-card-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    /* Space between cards */
 }
 
 /* Event card container */
-.event-card {
-    background-color: #e4eef6;
+.unique-event-card {
+    background-color: #F5F7F8;
     border-radius: 12px;
     padding: 10px;
-    /* Reduced padding to make the card smaller */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    width: calc(29.333% - 20px);
-    /* Adjusted width to show 3 cards per row */
+    width: calc(33.333% - 20px);
+    /* 3 cards per row on large screens */
     cursor: pointer;
     box-sizing: border-box;
-    /* Ensures padding and border are included in the width */
+    position: relative;
+    /* Allow positioning of child elements */
+}
+
+/* Card hover effect */
+.unique-event-card:hover {
+    transform: scale(1.02);
 }
 
 /* Image at the top */
-.event-image img {
+.unique-event-image {
+    position: relative;
+}
+
+.unique-event-image img {
     width: 100%;
-    height: auto;
+    height: 200px;
+    /* Fixed height for the image */
+    object-fit: cover;
+    /* Ensure image scales properly */
     border-radius: 8px;
 }
 
+/* Reserved space for Registration Successful badge */
+.unique-registration-success-container {
+    height: 30px;
+    /* Fixed height to reserve space */
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
 /* Registration successful badge */
-.registration-success {
+.unique-registration-success {
     background-color: #e7f9ee;
     color: #34a853;
     border-radius: 20px;
     padding: 5px 10px;
-    margin-top: 10px;
     font-size: 14px;
     display: inline-block;
+    text-align: center;
 }
 
 /* Event details section */
-.event-details {
+.unique-event-details {
     margin-top: 10px;
 }
 
-.event-title {
+.unique-event-title {
     margin: 10px 0;
     font-size: 16px;
-    /* Reduced font size for smaller cards */
     font-weight: bold;
 }
 
-.event-time,
-.event-speaker {
+.unique-event-time,
+.unique-event-speaker {
     font-size: 12px;
-    /* Reduced font size for smaller cards */
     color: #555;
 }
 
-.event-date {
-    font-size: 14px;
-    /* Adjusted font size */
-    font-weight: bold;
-    background-color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    float: right;
-    margin-top: 10px;
-}
-
 /* Seats and registrations */
-.event-info {
+.unique-event-info {
     margin-top: 10px;
     font-size: 12px;
-    /* Reduced font size for smaller cards */
     color: #333;
     display: flex;
     justify-content: space-between;
 }
 
 /* Registration button */
-.event-status {
-    margin-top: 10px;
+.unique-event-status {
+    margin-top: 20px;
+    /* Ensure space for button and alignment */
 }
 
-.registered-button {
+.unique-registered-button {
     background-color: #34a853;
     color: white;
     padding: 8px;
-    /* Reduced padding */
     border-radius: 8px;
     border: none;
     width: 100%;
     cursor: pointer;
     font-size: 14px;
-    /* Adjusted font size */
+    position: relative;
+    /* Ensure button stays in position */
 }
 
-.registered-button:hover {
+.unique-registered-button:hover {
     background-color: #2a7d3b;
+}
+
+/* Button when registered */
+.unique-registered-button.registered {
+    background-color: white;
+    color: #34a853;
+    border: 2px solid #34a853;
+    cursor: not-allowed;
+}
+
+/* Responsive design */
+@media screen and (max-width: 1024px) {
+    .unique-event-card {
+        width: calc(50% - 20px);
+        /* 2 cards per row on tablets */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .unique-event-card {
+        width: 100%;
+        /* 1 card per row on mobile */
+    }
 }

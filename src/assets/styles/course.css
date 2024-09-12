@@ -1,158 +1,165 @@
 .course-container {
-    display: grid;
-    gap: 20px;
-    padding: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* Default responsive layout */
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Default responsive layout */
 }
 
 /* Card styling */
 .course-card {
-    background-color: #F5F7F8;
-    border-radius: 6px;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* Vertically center-align text */
-    position: relative;
-    overflow: hidden;
-    /* Ensure content doesn't overflow */
+  background-color: #f5f7f8;
+  border-radius: 6px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* Vertically center-align text */
+  position: relative;
+  overflow: hidden;
+  /* Ensure content doesn't overflow */
 }
 
 /* Image container */
 .course-image-container {
-    width: 159px;
-    /* Fixed width for image container */
-    height: 105px;
-    /* Fixed height for image container */
-    overflow: hidden;
-    flex-shrink: 0;
-    /* Prevent shrinking of image */
+  width: 163px;
+  /* Fixed width for image container */
+  height: 114px;
+  /* Fixed height for image container */
+  overflow: hidden;
+  flex-shrink: 0;
+  /* Prevent shrinking of image */
 }
 
 /* Image styling */
 .course-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Ensure image fits container without distortion */
-    border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensure image fits container without distortion */
+  border-radius: 8px;
 }
 
 /* Content styling */
 .course-content {
-    padding-left: 15px;
-    /* Space between image and text */
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow-wrap: break-word;
-    /* Prevent text from overflowing */
-    word-break: break-word;
-    /* Ensure long text breaks properly */
+  padding-left: 15px;
+  /* Space between image and text */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-wrap: break-word;
+  /* Prevent text from overflowing */
+  word-break: break-word;
+  /* Ensure long text breaks properly */
 }
 
 /* Title styling */
 .course-number {
-    color: #6666ff;
-    font-size: 1.2em;
-    font-weight: bold;
+  color: #6666ff;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 h3 {
-    margin: 0;
-    font-size: 1.2em;
-    color: #333;
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
 }
 
 /* Lock icon styling */
 .lock-icon {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
-/* Tablet view: 3 cards per row, smaller cards, and 68% image height */
+/* Tablet view: 3 cards per row, slightly larger images */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .course-container {
-        grid-template-columns: repeat(3, 1fr);
-        /* 3 cards per row */
-    }
+  .course-container {
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 cards per row */
+  }
 
-    .course-card {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px;
-        /* Make the card slightly smaller */
-        transform: scale(0.95);
-        /* Reduce size slightly */
-    }
+  .course-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    /* Make the card slightly smaller */
+    transform: scale(0.95);
+    /* Reduce size slightly */
+  }
 
-    .course-image-container {
-        width: 100%;
-        /* Full width for image on tablet */
-        height: 68%;
-        /* Adjust height to 68% */
-        overflow: hidden;
-        /* Ensure image doesn't overflow */
-    }
+  .course-image-container {
+    width: 100%;
+    /* Full width for image on tablet */
+    height: 75%;
+    /* Increased height to 75% */
+    /* Adjust height to 75% */
+    overflow: hidden;
+    /* Ensure image doesn't overflow */
+  }
 
-    .course-image {
-        width: 100%;
-        height: 91%;
-        object-fit: cover;
-        /* Ensure image fits well */
-    }
+  .course-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensure image fits well */
+  }
 
-    .course-content {
-        padding-left: 0;
-        padding-top: 10px;
-        /* Add padding between image and text */
-        text-align: center;
-    }
+  .course-content {
+    padding-left: 0;
+    padding-top: 10px;
+    /* Add padding between image and text */
+    text-align: center;
+  }
 }
 
-
-/* Mobile view: 1 card per row */
+/* Mobile view: 1 card per row, similar to tablet design */
 @media (max-width: 768px) {
-    .course-container {
-        grid-template-columns: 1fr;
-        /* 1 card per row */
-    }
+  .course-container {
+    grid-template-columns: 1fr;
+    /* 1 card per row */
+  }
 
-    .course-card {
-        flex-direction: row;
-        /* Keep image on left and text on right */
-        align-items: center;
-    }
+  .course-card {
+    flex-direction: column;
+    /* Change layout to column */
+    align-items: center;
+    /* Center align items */
+    padding: 15px;
+    /* Adjust padding */
+  }
 
-    .course-image-container {
-        width: 120px;
-        /* Fixed width for consistency */
-        height: 80px;
-        /* Fixed height for consistency */
-    }
+  .course-image-container {
+    width: 100%;
+    /* Full width for image on mobile */
+    height: 75%;
+    /* Increase height for mobile */
+  }
 
-    h3 {
-        font-size: 1em;
-        /* Adjust font size for mobile */
-    }
+  .course-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensure image fits container without distortion */
+  }
 
-    .course-number {
-        font-size: 1em;
-        /* Adjust font size for mobile */
-    }
+  .course-content {
+    padding-left: 0;
+    padding-top: 10px;
+    /* Add padding between image and text */
+    text-align: center;
+  }
 }
 
 /* Large screens: 2 cards per row */
 @media (min-width: 1024px) {
-    .course-container {
-        grid-template-columns: repeat(2, 1fr);
-        /* 2 cards per row */
-    }
+  .course-container {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 cards per row */
+  }
 }

@@ -6,7 +6,7 @@
 }
 
 /* Main content area */
-.main-content {
+.main-contents {
   flex-grow: 1;
   padding: 20px;
   margin-left: 80px; /* Default margin with sidebar collapsed */
@@ -15,29 +15,29 @@
 }
 
 /* Sidebar open state */
-.sidebar-open .main-content {
+.sidebar-open .main-contents {
   margin-left: 240px; /* Margin with sidebar open */
   transition: margin-left 0.3s ease; /* Smooth transition when expanding */
 }
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 1088px) {
-  .main-content {
+  .main-contents {
     margin-left: 80px; /* Keep margin small when sidebar is collapsed */
   }
 
-  .sidebar-open .main-content {
+  .sidebar-open .main-contents {
     margin-left: 240px; /* Expand margin when sidebar is expanded */
   }
 
   /* For very small screens (mobile view) */
   @media (max-width: 1088px) {
-    .main-content {
+    .main-contents {
       margin-left: 0;
       padding: 15px; /* Adjust padding for mobile */
     }
 
-    .sidebar-open .main-content {
+    .sidebar-open .main-contents {
       margin-left: 240px;
     }
   }

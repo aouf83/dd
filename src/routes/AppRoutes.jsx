@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense, lazy } from "react";
+import React, { useState, useEffect, Suspense, lazy, useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Loader from "../components/common/Loader";
 import Header from "../components/common/Header";
@@ -10,10 +10,6 @@ const Dashboard = lazy(() => import("../pages/Dashboard"));
 const Course = lazy(() => import("../pages/course"));
 const Meets = lazy(() => import("../pages/meets"));
 const Practices = lazy(() => import("../pages/practices"));
-
-
-
-
 
 const AppRoutes = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -44,7 +40,7 @@ const AppRoutes = () => {
       <div className="App">
         <Header toggleSidebar={toggleSidebar} isAbove1088px={isAbove1088px} />
         <Sidebar isOpen={isSidebarOpen} isAbove1088px={isAbove1088px} />
-        <div className={`main-content ${isSidebarOpen ? "sidebar-open" : ""}`}>
+        <div className={`main-contents ${isSidebarOpen ? "sidebar-open" : ""}`}>
           <Suspense fallback={<Loader />}>
             <Routes>
               <Route path="/" element={<Dashboard />} />

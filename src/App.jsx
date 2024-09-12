@@ -1,7 +1,7 @@
 // src/App.js
-import React from 'react';
-import AppRoutes from './routes/AppRoutes';
-import './assets/styles/index.css'; // Import your global styles here
+import React from "react";
+import AppRoutes from "./routes/AppRoutes";
+import "./assets/styles/index.css"; // Import your global styles here
 
 const App = () => (
   <React.StrictMode>

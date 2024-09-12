@@ -17,10 +17,11 @@
   background: rgb(255, 255, 255);
   width: 100%;
 }
-.practices-left-videos-container {
-  background-color: yellow;
-}
+
 .practices-left-upcoming-container {
+  padding: 15px;
+}.practices-left-upcoming-container h1 {
+font-size: larger;
 }
 /* ////////////////////////////////////////////////////////////////////// practices right section  */
 
