@@ -23,9 +23,9 @@
 
 /* Image container */
 .course-image-container {
-    width: 159px;
+    width: 163px;
     /* Fixed width for image container */
-    height: 105px;
+    height: 114px;
     /* Fixed height for image container */
     overflow: hidden;
     flex-shrink: 0;
@@ -77,7 +77,7 @@ h3 {
     right: 10px;
 }
 
-/* Tablet view: 3 cards per row, smaller cards, and 68% image height */
+/* Tablet view: 3 cards per row, slightly larger images */
 @media (min-width: 768px) and (max-width: 1024px) {
     .course-container {
         grid-template-columns: repeat(3, 1fr);
@@ -96,15 +96,16 @@ h3 {
     .course-image-container {
         width: 100%;
         /* Full width for image on tablet */
-        height: 68%;
-        /* Adjust height to 68% */
+        height: 75%;
+        /* Increased height to 75% */
+        /* Adjust height to 75% */
         overflow: hidden;
         /* Ensure image doesn't overflow */
     }
 
     .course-image {
         width: 100%;
-        height: 91%;
+        height: 100%;
         object-fit: cover;
         /* Ensure image fits well */
     }
@@ -117,8 +118,7 @@ h3 {
     }
 }
 
-
-/* Mobile view: 1 card per row */
+/* Mobile view: 1 card per row, similar to tablet design */
 @media (max-width: 768px) {
     .course-container {
         grid-template-columns: 1fr;
@@ -126,26 +126,33 @@ h3 {
     }
 
     .course-card {
-        flex-direction: row;
-        /* Keep image on left and text on right */
+        flex-direction: column;
+        /* Change layout to column */
         align-items: center;
+        /* Center align items */
+        padding: 15px;
+        /* Adjust padding */
     }
 
     .course-image-container {
-        width: 120px;
-        /* Fixed width for consistency */
-        height: 80px;
-        /* Fixed height for consistency */
+        width: 100%;
+        /* Full width for image on mobile */
+        height: 75%;
+        /* Increase height for mobile */
     }
 
-    h3 {
-        font-size: 1em;
-        /* Adjust font size for mobile */
+    .course-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Ensure image fits container without distortion */
     }
 
-    .course-number {
-        font-size: 1em;
-        /* Adjust font size for mobile */
+    .course-content {
+        padding-left: 0;
+        padding-top: 10px;
+        /* Add padding between image and text */
+        text-align: center;
     }
 }
 
