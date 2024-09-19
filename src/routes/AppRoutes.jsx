@@ -10,6 +10,8 @@ const Dashboard = lazy(() => import("../pages/Dashboard"));
 const Course = lazy(() => import("../pages/course"));
 const Meets = lazy(() => import("../pages/meets"));
 const Practices = lazy(() => import("../pages/practices"));
+const Student = lazy(() => import("../pages/student"));
+
 
 
 
@@ -51,8 +53,8 @@ const AppRoutes = () => {
               <Route path="/course" element={<Course />} />
               <Route path="/meets" element={<Meets />} />
               <Route path="/practices" element={<Practices />} />
-
-              <Route path="*" element={<NotFoundPage />} />
+              <Route path="/student" element={<Student />} />
+               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
         </div>
