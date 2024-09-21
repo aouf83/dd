@@ -1,0 +1,124 @@
+/* Dashboard Layout */
+
+.dashboard-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+@media (max-width: 1000px) {
+  .dashboard-top {
+    flex-direction: column;
+  }
+}
+
+.dashboard-top-left,
+.dashboard-top-right {
+  width: 100%;
+}
+/* dash board left  */
+
+/* Title */
+.dashboard-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .dashboard-title {
+    font-size: 22px; /* Smaller font on mobile */
+  }
+}
+
+/* Thumbnail Container */
+.thumbnail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Custom Card Styling */
+.custom-card {
+  width: 100%;
+  max-width: 600px;
+  height: 350px;
+  margin: 0 auto;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Responsive adjustments for Card */
+@media (max-width: 600px) {
+  .custom-card {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Header Text Styling */
+.day-label {
+  font-size: 12px; /* Smaller font for the day label */
+}
+
+.card-title {
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .day-label {
+    font-size: 10px; /* Even smaller on mobile */
+  }
+
+  .card-title {
+    font-size: 14px; /* Adjust title size for mobile */
+  }
+}
+
+/* Start Button Styling */
+.start-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 14px; /* Slightly smaller font size */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+}
+
+/* Hover effect */
+.start-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Active state */
+.start-btn:active {
+  background-color: #004494;
+  transform: scale(0.98);
+}
+
+/* Responsive adjustments for Button */
+@media (max-width: 600px) {
+  .start-btn {
+    padding: 6px 12px; /* Adjust padding for mobile */
+    font-size: 12px; /* Smaller font size for better mobile fit */
+  }
+}
+
+/* dashboard right  */
+.dashboard-top-right {
+  margin-top: 20px; /* Spacing for smaller screens */
+}

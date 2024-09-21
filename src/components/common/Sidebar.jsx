@@ -21,7 +21,7 @@ const Sidebar = ({ isOpen }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [activeItem, setActiveItem] = useState("Dashboard");
   const [isAbove1088px, setIsAbove1088px] = useState(window.innerWidth > 1088);
-  
+  const [isclose, setisclose] = useState(false);
   const navigate = useNavigate();
   const handleLearningClick = () => {
     setLearningOpen(!learningOpen);
@@ -54,14 +54,16 @@ const Sidebar = ({ isOpen }) => {
     };
   }, []);
 
-  if (!isOpen && !isAbove1088px) {
-    return null;
-  }
+  useEffect(() => {
+    if (!isOpen && !isAbove1088px) {
+      setisclose(true);
+    }
+  }, [isOpen]);
 
   return (
     <div
       className={`sidebar ${
-        isOpen || (isAbove1088px && isHovered) ? "open" : ""
+        isOpen || (isAbove1088px && isHovered) ? "open" : "close"
       }`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

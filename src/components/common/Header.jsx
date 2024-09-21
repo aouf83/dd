@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import "../../assets/styles/Header.css";
-
+import Stacklogo from "../../assets/images/logo-removebg-preview.png"
 const Header = ({ toggleSidebar, isAbove1088px }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -38,7 +38,7 @@ const Header = ({ toggleSidebar, isAbove1088px }) => {
           </button>
         )}
         <div className="logo">
-          <img src="https://stackcentre.in/img/logo.png" alt="logo" />
+          <img src={Stacklogo} alt="logo" />
         </div>
       </div>
 
