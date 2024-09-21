@@ -122,3 +122,55 @@
 .dashboard-top-right {
   margin-top: 20px; /* Spacing for smaller screens */
 }
+
+.days-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  gap: 10px;
+  margin: 20px;
+}
+
+.day-box {
+  background-color: #c4baba;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.active {
+  background-color: #e2a5d3; /* Highlight the first box */
+}
+
+.day-box:hover {
+  background-color: #e2a5d3; /* Hover effect */
+}
+
+@media (max-width: 768px) {
+  .days-container {
+    justify-content: center;
+  }
+
+  .day-box {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .day-box {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
