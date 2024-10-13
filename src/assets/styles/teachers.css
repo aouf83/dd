@@ -1,0 +1,131 @@
+/* teachers.css */
+.teachers-section {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .teachers-section h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .teacher-card-container {
+    display: flex;
+    justify-content: center;
+    gap: 65px;
+  }
+  
+  .teacher-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 14px;
+    width: 221px;
+  }
+  
+  .teacher-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .teacher-card-body {
+    margin-top: 20px;
+  }
+  
+  .teacher-progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .teacher-progress {
+    height: 100%;
+    border-radius: 5px;
+  }
+  
+  .teacher-card-icon {
+    font-size: 24px;
+  }
+  
+
+
+
+
+  /* students.css */
+.students-section {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.students-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.students-header h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.add-student-btn {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.students-table th, .students-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.students-table th {
+  color: #3498db;
+  font-weight: bold;
+}
+
+.students-table td {
+  color: #333;
+}
+
+
+
+
+
+
+.students-table tr:last-child td {
+  border-bottom: none;
+}
+
+.action-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.edit-btn {
+  color: #3498db;
+}
+
+.delete-btn {
+  color: #e74c3c;
+}

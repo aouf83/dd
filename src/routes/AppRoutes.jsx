@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense, lazy } from "react";
+import React, { useState, useEffect, Suspense, lazy, useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Loader from "../components/common/Loader";
 import Header from "../components/common/Header";
@@ -11,8 +11,8 @@ const Course = lazy(() => import("../pages/course"));
 const Meets = lazy(() => import("../pages/meets"));
 const Practices = lazy(() => import("../pages/practices"));
 const Student = lazy(() => import("../pages/student"));
-
-
+const Teachers = lazy(() => import("../pages/teachers"));
+const Lessons = lazy(() => import("../pages/Lessons"));
 
 
 
@@ -46,7 +46,7 @@ const AppRoutes = () => {
       <div className="App">
         <Header toggleSidebar={toggleSidebar} isAbove1088px={isAbove1088px} />
         <Sidebar isOpen={isSidebarOpen} isAbove1088px={isAbove1088px} />
-        <div className={`main-content ${isSidebarOpen ? "sidebar-open" : ""}`}>
+        <div className={`main-contents ${isSidebarOpen ? "sidebar-open" : ""}`}>
           <Suspense fallback={<Loader />}>
             <Routes>
               <Route path="/" element={<Dashboard />} />
@@ -54,6 +54,8 @@ const AppRoutes = () => {
               <Route path="/meets" element={<Meets />} />
               <Route path="/practices" element={<Practices />} />
               <Route path="/student" element={<Student />} />
+              <Route path="/teachers" element={<Teachers/>} />
+              <Route path="/lessons" element={<Lessons/>} />
                <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>

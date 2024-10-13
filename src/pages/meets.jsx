@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../assets/styles/meets.css'; // Ensure this file has the updated unique class names
 
-const App = () => {
+const Meets = () => {
     const [registeredEvents, setRegisteredEvents] = useState([]);
 
     const eventData = [
@@ -92,4 +92,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default Meets;

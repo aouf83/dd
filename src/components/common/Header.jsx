@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import "../../assets/styles/Header.css";
-
+import Stacklogo from "../../assets/images/logo-removebg-preview.png"
 const Header = ({ toggleSidebar, isAbove1088px }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -38,7 +38,7 @@ const Header = ({ toggleSidebar, isAbove1088px }) => {
           </button>
         )}
         <div className="logo">
-          <img src="https://stackcentre.in/img/logo.png" alt="logo" />
+          <img src={Stacklogo} alt="logo" />
         </div>
       </div>
 
@@ -79,7 +79,9 @@ const Header = ({ toggleSidebar, isAbove1088px }) => {
                   margin: "0 auto",
                 }} /* Larger profile avatar inside drawer */
               />
-              <h3 style={{ marginTop: "15px", fontSize: "18px" }}>Abdul Rahman Aouf</h3>
+              <h3 style={{ marginTop: "15px", fontSize: "18px" }}>
+                Abdul Rahman Aouf
+              </h3>
               <p style={{ color: "#666", fontSize: "14px" }}>
                 johndoe@example.com
               </p>

@@ -14,13 +14,15 @@ import SchoolIcon from "@mui/icons-material/School";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import "../../assets/styles/Sidebar.css";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({ isOpen }) => {
   const [learningOpen, setLearningOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [activeItem, setActiveItem] = useState("Dashboard");
   const [isAbove1088px, setIsAbove1088px] = useState(window.innerWidth > 1088);
-
+  const [isclose, setisclose] = useState(false);
+  const navigate = useNavigate();
   const handleLearningClick = () => {
     setLearningOpen(!learningOpen);
   };
@@ -38,6 +40,7 @@ const Sidebar = ({ isOpen }) => {
   };
 
   const handleItemClick = (item) => {
+    navigate(`${item}`);
     setActiveItem(item);
   };
 
@@ -66,8 +69,8 @@ const Sidebar = ({ isOpen }) => {
     >
       <List>
         <ListItem
-          onClick={() => handleItemClick("Dashboard")}
-          className={activeItem === "Dashboard" ? "active" : ""}
+          onClick={() => handleItemClick("/")}
+          className={activeItem === "/" ? "active" : ""}
         >
           <ListItemIcon>
             <img
@@ -96,8 +99,8 @@ const Sidebar = ({ isOpen }) => {
         <Collapse in={learningOpen} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             <ListItem
-              onClick={() => handleItemClick("Syllabus")}
-              className={activeItem === "Syllabus" ? "active nested" : "nested"}
+              onClick={() => handleItemClick("course")}
+              className={activeItem === "course" ? "active nested" : "nested"}
             >
               <ListItemIcon>
                 <SchoolIcon />
@@ -105,9 +108,9 @@ const Sidebar = ({ isOpen }) => {
               {(isOpen || isHovered) && <ListItemText primary="Syllabus" />}
             </ListItem>
             <ListItem
-              onClick={() => handleItemClick("Practices")}
+              onClick={() => handleItemClick("practices")}
               className={
-                activeItem === "Practices" ? "active nested" : "nested"
+                activeItem === "practices" ? "active nested" : "nested"
               }
             >
               <ListItemIcon>
@@ -117,6 +120,20 @@ const Sidebar = ({ isOpen }) => {
             </ListItem>
           </List>
         </Collapse>
+
+        <ListItem
+          onClick={() => handleItemClick("meets")}
+          className={activeItem === "meets" ? "active" : ""}
+        >
+          <ListItemIcon>
+            <img
+              src="https://steyp.com/static/media/videoconference%202.725f9e2b.svg"
+              alt="Learning"
+              style={{ width: "24px" }} /* Adjust icon size */
+            />{" "}
+          </ListItemIcon>
+          {(isOpen || isHovered) && <ListItemText primary="Meets" />}
+        </ListItem>
 
         <ListItem
           onClick={() => handleItemClick("Support")}
@@ -130,11 +147,6 @@ const Sidebar = ({ isOpen }) => {
       </List>
 
       <div className="sidebar-footer">
-        <IconButton>
-          <ArrowForwardIcon />
-          {(isOpen || isHovered) && <ListItemText primary="Explore" />}
-        </IconButton>
-
         {/* Social Media Links */}
         {(isOpen || isHovered) && (
           <div className="social-icons">
@@ -180,6 +192,10 @@ const Sidebar = ({ isOpen }) => {
             </a>
           </div>
         )}
+        <IconButton>
+          <ArrowForwardIcon />
+          {(isOpen || isHovered) && <ListItemText primary="Explore" />}
+        </IconButton>
       </div>
     </div>
   );
