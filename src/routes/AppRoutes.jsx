@@ -13,6 +13,13 @@ const Practices = lazy(() => import("../pages/practices"));
 const Student = lazy(() => import("../pages/student"));
 const Teachers = lazy(() => import("../pages/teachers"));
 const Lessons = lazy(() => import("../pages/Lessons"));
+const Assignments = lazy(() => import("../pages/assignments"));
+const Login = lazy(() => import("../pages/login"));
+const Addcourse = lazy(() => import("../pages/addcourse"));
+
+
+
+
 
 
 
@@ -56,6 +63,12 @@ const AppRoutes = () => {
               <Route path="/student" element={<Student />} />
               <Route path="/teachers" element={<Teachers/>} />
               <Route path="/lessons" element={<Lessons/>} />
+              <Route path="/assignments" element={<Assignments/>} />
+              <Route path="/login" element={<Login/>} />
+              <Route path="/addcourse" element={<Addcourse/>} />
+
+
+
                <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>

@@ -1,30 +1,65 @@
 .dashboard-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    }
-  
-  .one-header {
-    padding: 16px;
-    background-color: #ddd;
-    border-radius: 8px;
-    margin-bottom: 20px; /* This keeps space below this section */
-    display: flex;
-    flex-direction: column;
-    margin-top: 36px;
-    /* Remove position relative for simplicity */
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
+
+/* Header Section */
+.one-header {
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 36px;
+}
+
+.one-header h1 {
+  font-weight: bolder;
+  font-family: ui-monospace;
+  margin-bottom: 0px;
+  font-size: 2.5rem;
+}
+
+.one-header h2 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  margin-right: 303px;
+}
+
+/* Ensuring layout consistency across large screens */
+@media (min-width: 1289px) {
+  .one-header {
+    padding: 20px;
+    margin-top: 50px; /* Adjust as needed to maintain spacing on large screens */
+    max-width: 1200px; /* Limit the width so it doesn't stretch too wide */
+    margin-left: auto; /* Center align on larger screens */
+    margin-right: auto;
+  }
+
   .one-header h1 {
-    font-weight: bolder;
-    font-family: ui-monospace;
-    margin-bottom: 0px;
-    font-size: 2.5rem;
+    font-size: 3rem; /* Slightly increase font size for larger screens */
   }
-  
+
   .one-header h2 {
-    margin-bottom: 20px; /* Adds space below the h2 to prevent overlap */
-    font-size: 1.2rem;
-    margin-right: 303px;
+    MARGIN-RIGHT: 300PX;
+    font-size: 1.5rem; /* Adjust the subheading font size */
   }
+}
+
+/* Other responsive adjustments */
+@media (max-width: 768px) {
+  .one-header {
+    padding: 10px;
+    margin-top: 150px;
+    background-color: #ffffff;
+  }
+
+  .one-header h1, h2 {
+    display: none;
+  }
+}
   
   .start-btn {
     background-color: #007bff;
@@ -47,22 +82,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
   }
 
 
   .stats-card, .hours-card, .user-status-card {
-    background-color: rgb(254, 254, 254);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color:rgb(11, 11, 11);
     padding: 20px;
-    border-radius: 8px;
     text-align: center;
-    box-shadow: 0px 5px 1px rgb(255, 247, 247);
-    border-radius: 8px;
-    border-top-width: 2px;
-    border-right-width: 2px;
-    border-bottom-width: 2px;
-    border-left-width: 2px;
-    border-color: rgb(249, 237, 237);
+    
   }
   
   .progress-section {
@@ -132,8 +163,9 @@
 
 
 .mobile-course-card {
-  background-color: #fafafa;
-  border-radius: 6px;
+  background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 10px;
   box-sizing: border-box;
   display: flex;
@@ -268,3 +300,40 @@
   background-color: #5555dd;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.p-10 {
+  padding: 2.5rem;
+}

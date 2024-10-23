@@ -1,116 +1,184 @@
+/* General Section Styling */
 .lessons-section {
-    max-width: 1100px;
-    padding: 30px;
-    margin: 20px auto;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  }
-  
-  .heading-lessons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  
-  .heading-lessons h2 {
-    font-size: 28px;
-    font-weight: 600;
-    color: #333;
-  }
-  
-  .heading-lessons button {
-    font-size: 16px;
-    padding: 10px 25px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  .heading-lessons button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Lesson Card Styling */
-  .lesson-card {
-    background-color: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
+  max-width: 1200px;
+  padding: 40px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Heading Section */
+.heading-lessons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.heading-lessons h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+.heading-lessons button {
+  font-size: 16px;
+  padding: 12px 30px;
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.heading-lessons button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+/* Lesson Card Styling */
+.lesson-card {
+  background-color: #fdfdfd;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.lesson-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.lesson-card h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+/* Lesson Details */
+.lesson-details p {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.lesson-details p svg {
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.lesson-details button {
+  font-size: 14px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.lesson-details button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Grid Layout for Lesson Cards */
+.lesson-weeks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  max-height: 80vh; /* Ensures the modal never exceeds 80% of the viewport height */
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto; /* Enables vertical scrolling */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .modal-content {
     padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.3s ease;
+    max-width: 90%;
+    max-height: 70vh; /* Adjusts height on smaller screens */
   }
-  
-  .lesson-card:hover {
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+.modal-content h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+}
+
+.modal-content label {
+  font-size: 16px;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.modal-content input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.modal-content .input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-content .input-group input {
+  flex: 1;
+}
+
+.modal-content button {
+  padding: 12px 30px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .heading-lessons h2 {
+      font-size: 26px;
   }
-  
-  .lesson-card .week-title {
-    font-size: 22px;
-    font-weight: 500;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+
+  .lesson-card {
+      padding: 20px;
   }
-  
-  /* Lesson Details */
-  .lesson-details {
-    font-size: 16px;
-    color: #555;
+
+  .modal-content {
+      margin: 50px auto;
   }
-  
-  .lesson-details p {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    color: #666;
-  }
-  
-  .lesson-details p svg {
-    margin-right: 8px;
-    color: #007bff;
-  }
-  
-  /* Edit Button */
-  .lesson-details button {
-    font-size: 14px;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  .lesson-details button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Grid Layout for Lesson Cards */
-  .lesson-weeks {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    .heading-lessons h2 {
-      font-size: 24px;
-    }
-  
-    .lesson-card {
-      padding: 15px;
-    }
-  
-    .lesson-details p {
-      font-size: 14px;
-    }
-  }
-  
+}

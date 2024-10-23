@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../assets/styles/meets.css'; // Ensure this file has the updated unique class names
+import img9 from "../assets/images/img9.png"
 
 const Meets = () => {
     const [registeredEvents, setRegisteredEvents] = useState([]);
@@ -15,7 +16,7 @@ const Meets = () => {
             registrations: 126,
         },
         {
-            image: 'https://wallpapers.com/images/hd/plexes-numbers-code-cyberspace-rendering-mjhn2mwqb8xzjg96.webp',
+            image:img9,
             date: 'SEP 12',
             time: 'THU 07:00 PM',
             title: 'HOW TO DEV IN FRAMER MOTION & INSTALL & USE',

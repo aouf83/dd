@@ -1,4 +1,3 @@
-// lessons.jsx
 import React, { useState } from 'react';
 import '../assets/styles/lessons.css';
 import AssignmentIcon from '@mui/icons-material/Assignment';
@@ -136,7 +135,7 @@ const Lessons = () => {
   const weeksInSixMonths = 26; // Roughly 6 months equals 26 weeks
 
   const [lessonsData, setLessonsData] = useState(
-    Array.from({ length: weeksInSixMonths }, (_, i) => ({
+    Array.from({ length: weeksInSixMonths }, () => ({
       title: '',
       assignments: [''],
       videos: ['']
@@ -157,6 +156,7 @@ const Lessons = () => {
         index === currentWeek ? newData : lesson
       )
     );
+    setModalOpen(false);
   };
 
   const closeModal = () => {
@@ -189,7 +189,7 @@ const Lessons = () => {
         ))}
       </div>
 
-      {modalOpen && (
+      {modalOpen && currentWeek !== null && (
         <LessonModal
           open={modalOpen}
           handleClose={closeModal}

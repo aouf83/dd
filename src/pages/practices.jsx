@@ -1,14 +1,15 @@
 import React from "react";
-import ".././assets/styles/practices.css";
 import PracticesLeft from "../components/practicesLeft";
 import PracticesRight from "../components/practicesRight";
-const practices = () => {
+import "../assets/styles/practices.css";
+
+const Practices = () => {
   return (
-    <div className="practices-main mt-5">
+    <div className="practices-main">
       <PracticesLeft />
       <PracticesRight />
     </div>
   );
 };
 
-export default practices;
+export default Practices;

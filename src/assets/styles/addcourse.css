@@ -1,0 +1,160 @@
+.admin-courses-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+  
+.new-course-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+  
+.new-course-input-field,
+.new-course-input-file {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 14px;
+}
+  
+.new-course-add-btn {
+    padding: 12px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+.new-course-add-btn:hover {
+    background-color: #0056b3;
+}
+  
+/* Grid Layout for Cards */
+.courses-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  /* Same size cards */
+    gap: 20px;
+}
+  
+.course-item-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+    height: 256px; /* Consistent height */
+}
+  
+.course-item-container:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+  
+.course-image-display {
+    width: 100%;
+    max-width: 180px;
+    height: 120px; /* Consistent height */
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px; /* Consistent spacing */
+}
+  
+.course-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 15px;
+}
+  
+.course-action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 28px;
+}
+  
+.course-edit-btn,
+.course-delete-btn {
+    padding: 8px 16px;  /* Consistent button size */
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+.course-edit-btn {
+    background-color: #28a745;
+    color: white;
+}
+  
+.course-edit-btn:hover {
+    background-color: #218838;
+}
+  
+.course-delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+  
+.course-delete-btn:hover {
+    background-color: #c82333;
+}
+  
+/* Edit form inside a card */
+.course-edit-mode .edit-course-input,
+.course-edit-mode .edit-course-input-file {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+  
+.edit-course-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.edit-course-save-btn,
+.edit-course-cancel-btn {
+    padding: 8px 16px; /* Consistent button size */
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-course-save-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.edit-course-save-btn:hover {
+    background-color: #0056b3;
+}
+
+.edit-course-cancel-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.edit-course-cancel-btn:hover {
+    background-color: #c82333;
+}
